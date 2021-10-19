@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array List</title>
+  <link rel="stylesheet" href="astyle3.css">
+
+</head>
+
+<body>
+
+  <div id="header" class="header">
+    <h1>Array List </h1>
+    <input type="text" id="todoInput" placeholder="Enter Your ToDo.......">
+    <button class="btn" id="Push">PUSH</button>
+    <button class="btn" id="Pop">POP</button>
+  </div>
+
+  <ul id="myUL">
+    <li><label>
+      <input type="checkbox" class="check">
+      <p>Text</p>
+    </label> </li>
+
+  </ul>
+
+
+
+  <script>
+
+
+
+    var pushData = document.getElementById('Push');
+    var Pop = document.getElementById('Pop');
+    var arraryData = new Array();
+    var myUL = document.getElementById('myUL');
+    // Push Value in Array Using Input 
+    
+      pushData.addEventListener("click", () => {
+        var inPutList = document.getElementById('todoInput').value;
+        if (document.getElementById('todoInput').value != "") {
+        arraryData.push(inPutList);
+        // console.log(arraryData);
+       
+        str = "";
+        arraryData.forEach(element => {
+          // str += `<li>${element}</li>`;
+
+          str += `<li><label>
+      <input type="checkbox" class="check"><p>${element}</p></label> </li>`;
+          
+       
+        });
+        myUL.innerHTML = str;
+        }
+
+         document.getElementById('todoInput').value = "";
+    });
+
+   // pop Value in Array Using Input 
+
+
+Pop.addEventListener("click",() => {
+
+        arraryData.pop();
+        str = "";
+        arraryData.forEach(element => {
+   
+          str += `<li><label>
+      <input type="checkbox" class="check"><p>${element}</p></label> </li>`;
+        });
+        myUL.innerHTML = str;
+        
+});
+
+//  
+
+
+
+
+
+
+
+  </script>
+
+</body>
+
+</html>

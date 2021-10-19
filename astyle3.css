@@ -5,6 +5,10 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.center-text {
+text-align:center;
+}
+
 .header {
     padding: 30px 20px;
     background: rgb(20, 125, 185);
